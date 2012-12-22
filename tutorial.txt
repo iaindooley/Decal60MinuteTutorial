@@ -1,192 +1,246 @@
-Before starting:
+# Before starting:
+
+## This should take you about 60 minutes
+
+Thanks for taking an interested in Decal CMS. The following tutorial is designed to give you a more in-depth introduction to Decal CMS following on from your initial interest in our "Whirlwind Tour" at http://www.decalcms.com/tour/
+
+## What is the purpose of this tutorial?
 
 Decal does a lot of things right and we use it in production for our own clients.
 
 There are a number of things we need to do before other web developers can use it and the purpose of this tutorial is to find out if we're on the right track.
 
-We'd like enough support to launch a Kickstarter campaign so we can fix these major flaws and launch for public use.
+We'd like to build enough support to launch a Kickstarter campaign so we can fix these major flaws and launch Decal CMS for public use.
 
-The biggest issues are:
+So please bear this in mind as you take the tutorial and when you're done, please email team@workingsoftware.com.au and tell us whether you'd back us or not!
+
+## List of the biggest things that we want to fix:
+
+Here is a list of the biggest issues we're aware of that we'd like to fix prior to launching this product for public use. Please take a moment to review them and bear these in mind when taking this tutorial:
 
  - Deployment via ZIP only
  - Editing interface in Firefox only
  - Image and embed placement is problematic
  - Caveats with what markup can be made editable
- - Limited inline formatting
  - Doctype is always HTML5 style
  - Cumbersome file manager
  - Project and interface CSS can interfere with each other
- - Serious lack of documentation!
+ - Serious lack of documentation and vague, ambiguous or non-existent error reporting
  - API design issues
  - Hosting on all major continents
  - Using data-dcl prefixes on decal attributes
- - Reporting errors during deployment more clearly and explicitly disallowing markup or structures which cause errors (ie. making it less easy to break)
 
-NB: More details on each of these points is included as an appendix at the end of the tutorial.
+More details on each of these points is included as an appendix at the end of the tutorial in the section "Detailed description of issues we aim to fix before launching for public use".
 
-The goal for Decal is to allow you to deploy and edit completely arbitrary HTML. The current version has some limitations.
+# Tutorial
 
-We plan on fixing those if we get enough support for the project.
+## How this tutorial is structured
 
-For the sake of simplicity, we have created a sample HTML project for you to deploy.
+Each section deals with a specific feature of Decal. We start with the most simple, and progress to more complex features as we go through.
 
-Step 1: Hello World (the simplest possible site)
+The goal for Decal is to allow you to deploy and edit completely arbitrary HTML, but the current version has some limitations. We plan on fixing those if we get enough support for the project.
 
-<html>
-    <head>
-        <title>Ohai</title>
-    </head>
-    <body>
-        <div area="Main content" editable="true">
-            <h1>Sample content is instructional</h1>
-            <h2>This is what the user sees when they create a new page</h2>
-            <p>You can also include images if you like:</p>
-            <p><img src="http://dummy.mockups.decalcms.com/200x200" /></p>
-        </div>
-    </body>
-</html>
+For the sake of simplicity in this tutorial, we have created a sample HTML project for you to deploy.
 
-Step 2: Adding some structure, tags and formatting
+## Some instructional videos
 
-<html>
-    <head>
-        <title>Ohai</title>
-    </head>
-    <body>
-        <div area="Main content" id="whatever">
-            <h1 editable="true">This is where you type your content</h1>
-            <p editable="true" tags="inline">This allows inline formatting only</p>
-        </div>
-    </body>
-</html>
+The following link will take you to some instructional videos on our website:
 
-Step 3: Repeatable vs. fixed components and containers
+http://www.decalcms.com/page/Support#instructionalVideos
 
-<html>
-    <head>
-        <title>Ohai</title>
-    </head>
-    <body>
-        <div area="Main content">
-            <div component="Title content" id="whatever">
-                <h1 editable="true">This is a fixed component because it has an id attribute</h1>
-                <p editable="true" tags="inline">The user does not need to choose to add a main content area.</p>
-                <p editable="true" tags="inline">If the user clicks the green arrow at the top right, and chooses to add a component after, they can add another div.</p>
+They are aimed at *users* and show you how the editing interface works. They're a little outdated, but it would be a good idea to watch them now. There is about 15 minutes of video content in total and watching it now will give you a bit of context for the rest of the tutorial.
+
+## Step 1: Hello World (the simplest possible site)
+
+Create a folder called "MyProject" and in it, create a file called home.html and paste the following HTML into it:
+
+    <html>
+        <head>
+            <title>Ohai</title>
+        </head>
+        <body>
+            <div area="Main content" editable="true" id="mainContent">
+                <h1>Sample content is instructional</h1>
+                <h2>This is what the user sees when they create a new page</h2>
+                <p>You can also include images if you like:</p>
+                <p><img src="http://dummy.mockups.decalcms.com/200x200" /></p>
             </div>
-            <div component="Title content">
-                <h1 editable="true">This component is repeatable because the containing div does not have an id attribute</h1>
-                <p editable="true" tags="inline">It can be structured however you like</p>
-                <br />
-                <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
-                <div editable="true">
-                    <h3>The user can use any kind of formatting here</h3>
+        </body>
+    </html>
+
+Now create a ZIP archive from the folder called MyProject.zip.
+
+Go to:
+
+http://manager.decalcms.com/
+
+and sign-up for a new account.
+
+*NB: If you're in the United States you should go to http://manager.us.decalcms.com/ to use our US server which will be faster*
+
+In the top menu bar click "Add Site" and name it "My Project" then select the MyProject.zip file you created and upload it.
+
+Once the site has finished preparing, you can click "Launch" to launch the editor for the site. If you follow the on-screen prompts to create a page, you'll see that you can edit the content in the div.
+
+## Step 2: Adding some structure, tags and formatting
+
+Repeat the same process you went through in Step 1 using the following HTML:
+
+    <html>
+        <head>
+            <title>Ohai</title>
+        </head>
+        <body>
+            <div area="Main content" id="whatever">
+                <h1 editable="true" tags="none">This is where you type your content</h1>
+                <p editable="true" tags="inline">This allows inline formatting only</p>
+            </div>
+        </body>
+    </html>
+
+Unlike the first step, you're now much more limited in terms of what formatting you're able to apply.
+
+## Step 3: Repeatable vs. fixed components and containers
+
+Now repeat the same process again, using the following HTML:
+
+    <html>
+        <head>
+            <title>Ohai</title>
+        </head>
+        <body>
+            <div area="Main content">
+                <div component="Title content" id="whatever">
+                    <h1 editable="true">This is a fixed component because it has an id attribute</h1>
+                    <p editable="true" tags="inline">The user does not need to choose to add a main content area.</p>
+                    <p editable="true" tags="inline">If the user clicks the green arrow at the top right, and chooses to add a component after, they can add another div.</p>
                 </div>
-                <div editable="true" tags="embed">
-                    <p>Click here to embed some snippet of code (eg. a Wufoo form or YouTube video)</p>
-                </div>
-            </div>
-        </div>
-        <div area="Sub content">
-            <div component="Sub content intro" id="something">
-                <h2>This area allows more than one type of component</h2>
-                <p>This first component is fixed, but unlike the previous area, if you click the green arrow at the top right, you'll be given the option to add one or more components.</p>
-                <p>As you mouse over each in the menu, you will see the sample content appear in the document.</p>
-            </div>
-            <div component="Component type 1">
-                <h2 editable="true" tags="none">This component has a heading</h2>
-                <p editable="true" tags="inline">And some body text</p>
-                <br />
-                <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
-                <br />
-                <a editable="true" href="">This link is editable (but the text isn't)</a>
-                <p>You can include non-editable markup in a component, too</p>
-            </div>
-            <div component="Component type 2">
-                <h3 editable="true" tags="none">This component has a different heading and an image</h3>
-                <br />
-                <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
-            </div>
-        </div>
-    </body>
-</html>
-
-Step 4: Custom classes and link styles
-
-styles.css
-
-p.specialParagraph /* decal: Red text */
-{
-    color:red;
-    background:blue;
-}
-
-p.anotherType /* decal: Ugly paragraph */
-{
-    border:1px solid red;
-    background:black;
-    text:white;
-}
-
-a.linkTypeOne /* Red link text */
-{
-    color:red;
-}
-
-a.linkTypeTwo /* Green link text */
-{
-    color:green;
-}
-
-<html>
-    <head>
-        <title>Ohai</title>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-    </head>
-    <body>
-        <div area="Main content">
-            <div component="Title content" id="whatever">
-                <h1 editable="true">This is a fixed component because it has an id attribute</h1>
-                <p editable="true" tags="inline">The user does not need to choose to add a main content area.</p>
-                <p editable="true" tags="inline">If the user clicks the green arrow at the top right, and chooses to add a component after, they can add another div.</p>
-            </div>
-            <div component="Title content">
-                <h1 editable="true">This component is repeatable because the containing div does not have an id attribute</h1>
-                <p editable="true" tags="inline">It can be structured however you like</p>
-                <br />
-                <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
-                <div editable="true">
-                    <h3>The user can use any kind of formatting here</h3>
-                </div>
-                <div editable="true" tags="embed">
-                    <p>Click here to embed some snippet of code (eg. a Wufoo form or YouTube video)</p>
+                <div component="Title content">
+                    <h1 editable="true">This component is repeatable because the containing div does not have an id attribute</h1>
+                    <p editable="true" tags="inline">It can be structured however you like</p>
+                    <br />
+                    <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
+                    <div editable="true">
+                        <h3>The user can use any kind of formatting here</h3>
+                    </div>
+                    <div editable="true" tags="embed">
+                        <p>Click here to embed some snippet of code (eg. a Wufoo form or YouTube video)</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div area="Sub content">
-            <div component="Sub content intro" id="something">
-                <h2>This area allows more than one type of component</h2>
-                <p>This first component is fixed, but unlike the previous area, if you click the green arrow at the top right, you'll be given the option to add one or more components.</p>
-                <p>As you mouse over each in the menu, you will see the sample content appear in the document.</p>
+            <div area="Sub content">
+                <div component="Sub content intro" id="something">
+                    <h2>This area allows more than one type of component</h2>
+                    <p>This first component is fixed, but unlike the previous area, if you click the green arrow at the top right, you'll be given the option to add one or more components.</p>
+                    <p>As you mouse over each in the menu, you will see the sample content appear in the document.</p>
+                </div>
+                <div component="Component type 1">
+                    <h2 editable="true" tags="none">This component has a heading</h2>
+                    <p editable="true" tags="inline">And some body text</p>
+                    <br />
+                    <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
+                    <br />
+                    <a editable="true" href="">This link is editable (but the text isn't)</a>
+                    <p>You can include non-editable markup in a component, too</p>
+                </div>
+                <div component="Component type 2">
+                    <h3 editable="true" tags="none">This component has a different heading and an image</h3>
+                    <br />
+                    <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
+                </div>
             </div>
-            <div component="Component type 1">
-                <h2 editable="true" tags="none">This component has a heading</h2>
-                <p editable="true" tags="inline">And some body text</p>
-                <br />
-                <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
-                <br />
-                <a editable="true" href="">This link is editable (but the text isn't)</a>
-                <p>You can include non-editable markup in a component, too</p>
-            </div>
-            <div component="Component type 2">
-                <h3 editable="true" tags="none">This component has a different heading and an image</h3>
-                <br />
-                <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
-            </div>
-        </div>
-    </body>
-</html>
+        </body>
+    </html>
 
-Step 5: Images, embeds and the file manager
+The content in the page itself, tells you what each bit is doing and the instructional videos at the start of this tutorial should have given you enough of an idea about how components on the page work that you should be able to just repeat the process you did above to deploy the site then add a page and see how the attributes included above have enabled you to create a highly structured, editable interface.
+
+## Step 4: Custom classes and link styles
+
+In this step, we'll add a stylesheet to the project and use the "Update" button to update an existing site in the manager interface, rather than using the "add site" button.
+
+Firstly, create a file called styles.css in your project folder and put the following CSS code in it:
+
+    p.specialParagraph /* decal: Red text */
+    {
+        color:red;
+        background:blue;
+    }
+    
+    p.anotherType /* decal: Ugly paragraph */
+    {
+        border:1px solid red;
+        background:black;
+        text:white;
+    }
+    
+    a.linkTypeOne /* Red link text */
+    {
+        color:red;
+    }
+    
+    a.linkTypeTwo /* Green link text */
+    {
+        color:green;
+    }
+
+Now update your home.html file with the following code - note that it's identical save for the inclusion of the styles.css file above:
+
+    <html>
+        <head>
+            <title>Ohai</title>
+            <link rel="stylesheet" type="text/css" href="styles.css" />
+        </head>
+        <body>
+            <div area="Main content">
+                <div component="Title content" id="whatever">
+                    <h1 editable="true">This is a fixed component because it has an id attribute</h1>
+                    <p editable="true" tags="inline">The user does not need to choose to add a main content area.</p>
+                    <p editable="true" tags="inline">If the user clicks the green arrow at the top right, and chooses to add a component after, they can add another div.</p>
+                </div>
+                <div component="Title content">
+                    <h1 editable="true">This component is repeatable because the containing div does not have an id attribute</h1>
+                    <p editable="true" tags="inline">It can be structured however you like</p>
+                    <br />
+                    <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
+                    <div editable="true">
+                        <h3>The user can use any kind of formatting here</h3>
+                    </div>
+                    <div editable="true" tags="embed">
+                        <p>Click here to embed some snippet of code (eg. a Wufoo form or YouTube video)</p>
+                    </div>
+                </div>
+            </div>
+            <div area="Sub content">
+                <div component="Sub content intro" id="something">
+                    <h2>This area allows more than one type of component</h2>
+                    <p>This first component is fixed, but unlike the previous area, if you click the green arrow at the top right, you'll be given the option to add one or more components.</p>
+                    <p>As you mouse over each in the menu, you will see the sample content appear in the document.</p>
+                </div>
+                <div component="Component type 1">
+                    <h2 editable="true" tags="none">This component has a heading</h2>
+                    <p editable="true" tags="inline">And some body text</p>
+                    <br />
+                    <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
+                    <br />
+                    <a editable="true" href="">This link is editable (but the text isn't)</a>
+                    <p>You can include non-editable markup in a component, too</p>
+                </div>
+                <div component="Component type 2">
+                    <h3 editable="true" tags="none">This component has a different heading and an image</h3>
+                    <br />
+                    <img editable="true" width="200" src="http://dummy.mockups.decalcms.com/200x200/" />
+                </div>
+            </div>
+        </body>
+    </html>
+
+Now if you go back into edit your site (you may need to reload the page or at least unlock/relock the page in order to grab the new markup and stylesheet). You will now see that whenever you edit a link, you'll have the link styles available that are included in the CSS, and in the style menu in the toolbar you'll have the style options defined for "Red Text" and "Ugly Paragraph" whenever you click onto a paragraph node.
+
+The way this works is that you can define these custom styles and whenever you click onto a block node which matches the select used for the style, you will have the option to choose one of these custom styles from the menu.
+
+Currently you can *only* apply these to editable block level elements (ie. p, div and li nodes) however our goal is to expand why types of elements you can target with custom CSS styles (for example allowing you to create an editable span tag and letting the user choose one of several available styles to apply to it).
+
+## Step 5: Images, embeds and the file manager
 
 First look at this tutorial video:
 
@@ -496,3 +550,49 @@ You can now write code to populate the the list of recent and recommended posts.
 INSTRUCTIONS FOR DOING THIS IN PHP, RUBY, PYTHON USING THE API
 
 The responses are all cached, which can be enabled/disabled in the Decal Manager. You can also enable/disable app widgets in the Decal Manager to prevent them from being loaded.
+
+# Detailed description of issues we aim to fix before launching for public use
+
+## Deployment via ZIP only
+
+This means that every time you make a change you have to re-upload the entire project as a ZIP file which can be very time consuming, slowing down the speed at which you can iterate.
+
+## Editing interface in Firefox only
+
+Obviously sites built with Decal work in any browser, but the editing and backend interfaces used to manage the content currently only work in Firefox. The Decal tour at http://www.decalcms.com/tour/ uses a modified version of the editor which works in Chrome, Safari and Firefox so we aim to port those changes back into the main codebase.
+
+## Image and embed placement is problematic
+
+Unlike other in-browser rich text editors, Decal won't add any inline styles to position images. Although the positioning works well it can be unintuitive.
+
+## Caveats with what markup can be made editable
+
+Currently only div, p and li nodes can be made editable and in-line formatting is limited to em, strong and u. We want to add support for editing a greater range of nodes, including HTML5 element types and inline nodes (eg. spans)
+
+## Doctype is always HTML5 style
+
+Currently you can't set the doctype from your templates, it's hard coded into the Decal CMS output as <!DOCTYPE html>
+
+## Cumbersome file manager
+
+The process of adding and managing files and images to the site is quite long winded. Ideally we want to integrate directly with Dropbox or other cloud storage solutions to simplify the process of placing media on your site.
+
+## Project and interface CSS can interfere with each other
+
+Because Decal CMS allows you to edit content right on the page, we've found that sometimes the CSS you use to style your page, can impact on how the Decal CMS interface renders. We need to restructure the CSS in Decal to ensure it never conflicts with the CSS in your project.
+
+## Serious lack of documentation and vague, ambiguous or non-existent error reporting
+
+Currently it's very easy to get confused, stuck or otherwise completely immobilised while deploying a Decal project. Whilst a lot of this can be solved with better documentation, we also need to make sure that any and all errors are accurately reported with helpful error messages and making things much more robust.
+
+## API design issues
+
+Our API currently isn't particularly intuitive to use. It works, and it's good, but the naming of the parameters and the formatting of the reqeusts needs work.
+
+## Hosting on all major continents
+
+Currently we only have hosting in one location in the US, and in Australia. We want to expand to ensure we're present on all major continents.
+
+## Using data-dcl prefixes on decal attributes
+
+When you deploy with Decal CMS, you use attributes on your HTML. Currently these attributes aren't easily distinguishable from other HTML attributes.
