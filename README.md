@@ -217,7 +217,7 @@ Now update your home.html file with the following code - note that it's identica
                     <p editable="true" tags="inline">The user does not need to choose to add a main content area.</p>
                     <p editable="true" tags="inline">If the user clicks the green arrow at the top right, and chooses to add a component after, they can add another div.</p>
                 </div>
-                <div component="Title content">
+                <div component="Additional content">
                     <h1 editable="true">This component is repeatable because the containing div does not have an id attribute</h1>
                     <p editable="true" tags="inline">It can be structured however you like</p>
                     <br />
