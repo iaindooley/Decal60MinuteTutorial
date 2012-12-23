@@ -1,5 +1,13 @@
 # Before starting:
 
+## What is Decal CMS?
+
+Decal CMS is a hosted content management system that aims to make it simple and cost effective to deploy editable sites with highly structured markup.
+
+We want to make Decal a system you can use for all sites, large or small, and even as a "cloud CMS" to plug in content management to highly complex web applications (via the API).
+
+We also want to ensure that our system for extending Decal with custom functionality is the most flexible and simple to use of any CMS, even though it is a hosted product.
+
 ## This should take you about 60 minutes
 
 Thanks for taking an interested in Decal CMS. The following tutorial is designed to give you a more in-depth introduction to Decal CMS following on from your initial interest in our "Whirlwind Tour" at http://www.decalcms.com/tour/
@@ -19,7 +27,7 @@ So please bear this in mind as you take the tutorial and when you're done, pleas
 Here is a list of the biggest issues we're aware of that we'd like to fix prior to launching this product for public use. Please take a moment to review them and bear these in mind when taking this tutorial:
 
  - Deployment via ZIP only
- - Editing interface in Firefox only
+ - Editing interface works in Firefox only
  - Image and embed placement is problematic
  - Caveats with what markup can be made editable
  - Doctype is always HTML5 style
@@ -27,10 +35,12 @@ Here is a list of the biggest issues we're aware of that we'd like to fix prior 
  - Project and interface CSS can interfere with each other
  - Serious lack of documentation and vague, ambiguous or non-existent error reporting
  - API design issues
- - Hosting on all major continents
+ - We need hosting on all major continents
  - Using data-dcl prefixes on decal attributes
 
 More details on each of these points is included as an appendix at the end of the tutorial in the section "Detailed description of issues we aim to fix before launching for public use".
+
+We thought it prudent to present this list at the beginning of the tutorial but didn't want to get too bogged down in it!
 
 # Tutorial
 
@@ -40,7 +50,7 @@ Each section deals with a specific feature of Decal. We start with the most simp
 
 The goal for Decal is to allow you to deploy and edit completely arbitrary HTML, but the current version has some limitations. We plan on fixing those if we get enough support for the project.
 
-For the sake of simplicity in this tutorial, we have created a sample HTML project for you to deploy.
+For the sake of simplicity in this tutorial, we have created a sample HTML project for you to deploy, but we encourage you to play around with deploying a project of your own afterwards and let us know what problems you encounter.
 
 ## Some instructional videos
 
