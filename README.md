@@ -420,7 +420,7 @@ For starters, create a new folder called "My Menu Project" and create a file in 
                             <a href="" characters="60">This is a sub menu item</a>
                         </li>
                     </ul>
-                <li>
+                </li>
                 <li>
                     <a href="">This is a menu item</a>
                     <ul>
@@ -428,27 +428,7 @@ For starters, create a new folder called "My Menu Project" and create a file in 
                             <a href="">This is a sub menu item</a>
                         </li>
                     </ul>
-                <li>
-                <li>
-                    <a href="">This is a menu item</a>
-                    <ul>
-                        <li>
-                            <a href="">This is a sub menu item</a>
-                        </li>
-                        <li>
-                            <a href="">This is a sub menu item</a>
-                        </li>
-                        <li>
-                            <a href="">This is a sub menu item</a>
-                        </li>
-                        <li>
-                            <a href="">This is a sub menu item</a>
-                        </li>
-                        <li>
-                            <a href="">This is a sub menu item</a>
-                        </li>
-                    </ul>
-                <li>
+                </li>
                 <li>
                     <a href="">This is a menu item</a>
                     <ul>
@@ -468,7 +448,7 @@ For starters, create a new folder called "My Menu Project" and create a file in 
                             <a href="">This is a sub menu item</a>
                         </li>
                     </ul>
-                <li>
+                </li>
                 <li>
                     <a href="">This is a menu item</a>
                     <ul>
@@ -488,7 +468,27 @@ For starters, create a new folder called "My Menu Project" and create a file in 
                             <a href="">This is a sub menu item</a>
                         </li>
                     </ul>
+                </li>
                 <li>
+                    <a href="">This is a menu item</a>
+                    <ul>
+                        <li>
+                            <a href="">This is a sub menu item</a>
+                        </li>
+                        <li>
+                            <a href="">This is a sub menu item</a>
+                        </li>
+                        <li>
+                            <a href="">This is a sub menu item</a>
+                        </li>
+                        <li>
+                            <a href="">This is a sub menu item</a>
+                        </li>
+                        <li>
+                            <a href="">This is a sub menu item</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </body>
     </html>
