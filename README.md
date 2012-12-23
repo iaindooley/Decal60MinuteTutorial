@@ -92,6 +92,8 @@ In the top menu bar click "Add Site" and name it "My Project" then select the My
 
 Once the site has finished preparing, you can click "Launch" to launch the editor for the site. If you follow the on-screen prompts to create a page, you'll see that you can edit the content in the div.
 
+After you've had a play around with the interface, you can deactivate the site.
+
 ## Step 2: Adding some structure, tags and formatting
 
 Repeat the same process you went through in Step 1 using the following HTML:
