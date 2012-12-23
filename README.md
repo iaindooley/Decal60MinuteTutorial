@@ -365,38 +365,46 @@ For starters, create a new folder called "My Menu Project" and create a file in 
             <div id="mainNavigation" menu="Main Navigation">
                 <div repeat="10" active-class="main-highlight">
                     <p><a href="" characters="20">This is an item</a></p>
-                    <div repeat="10" active-class="main-sub-highlight">
-                        <p><a href="" characters="60">This is a sub menu item</a></p>
-                    </div>
-                    <div>
-                        <p><a href="">This is a sub menu item</a></p>
-                    </div>
-                    <div>
-                        <p><a href="">This is a sub menu item</a></p>
-                    </div>
-                    <div>
-                        <p><a href="">This is a sub menu item</a></p>
-                    </div>
-                    <div>
-                        <p><a href="">This is a sub menu item</a></p>
-                    </div>
-                </div>
-                <div>
-                    <p><a href="">This is an item</a></p>
-                    <div>
-                        <p><a href="">This is a sub menu item</a></p>
+                    <div submenu="Main sub navigation">
+                        <div repeat="10" active-class="main-sub-highlight">
+                            <p><a href="" characters="60">This is a sub menu item</a></p>
+                        </div>
+                        <div>
+                            <p><a href="">This is a sub menu item</a></p>
+                        </div>
+                        <div>
+                            <p><a href="">This is a sub menu item</a></p>
+                        </div>
+                        <div>
+                            <p><a href="">This is a sub menu item</a></p>
+                        </div>
+                        <div>
+                            <p><a href="">This is a sub menu item</a></p>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <p><a href="">This is an item</a></p>
                     <div>
-                        <p><a href="">This is a sub menu item</a></p>
+                        <div>
+                            <p><a href="">This is a sub menu item</a></p>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <p><a href="">This is an item</a></p>
                     <div>
-                        <p><a href="">This is a sub menu item</a></p>
+                        <div>
+                            <p><a href="">This is a sub menu item</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p><a href="">This is an item</a></p>
+                    <div>
+                        <div>
+                            <p><a href="">This is a sub menu item</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
