@@ -164,7 +164,14 @@ Now repeat the same process again, using the following HTML:
         </body>
     </html>
 
-The content in the page itself, tells you what each bit is doing and the instructional videos at the start of this tutorial should have given you enough of an idea about how components on the page work that you should be able to just repeat the process you did above to deploy the site then add a page and see how the attributes included above have enabled you to create a highly structured, editable interface.
+Now repeat the process again to deploy this as a new site.
+
+Have a play with the interface, add in and edit a few components, then go back to the source code and note how the following attributes have been added to create that highly structured interface:
+
+ - area: defines an editable area
+ - component: defines a component (some HTML structure) allowed within that area. If used in conjunction with an id attribute will create a "fixed" component that always exists on the page
+ - editable: denotes a node which can be edited. Currently this can only applied to h1-6, p, div and li nodes.
+ - tags: used in conjunction with an editable attribute to indicate what formatting should be allowed. Use a comma separated list of allowed formats, or the shorthand "none" to disallow all formatting or "inline" to allow inline styles only. The complete list is h1-6,p,br,ol,ul,li,img,embed,em,u,strong,a.
 
 ## Step 4: Custom classes and link styles
 
@@ -252,7 +259,7 @@ You will now see that whenever you edit a link, you'll have the link styles avai
 
 The way this works is that you can define these custom styles and whenever you click onto a block node which matches the selector used for the style, the user will have the option to choose one of these custom styles from the menu in order to apply that class.
 
-Currently you can *only* apply these to editable block level elements (ie. p, div and li nodes) however our goal is to expand why types of elements you can target with custom CSS styles (for example allowing you to create an editable span tag and letting the user choose one of several available styles to apply to it).
+Currently you can *only* apply these to editable block level elements (ie. h1-6, p, div and li nodes) however our goal is to expand why types of elements you can target with custom CSS styles (for example allowing you to create an editable span tag and letting the user choose one of several available styles to apply to it).
 
 ## Step 5: Images, embeds and the file manager
 
