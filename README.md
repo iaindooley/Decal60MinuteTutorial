@@ -190,7 +190,7 @@ Firstly, create a file called styles.css in your project folder and put the foll
     {
         border:1px solid red;
         background:black;
-        text:white;
+        color:white;
     }
     
     a.linkTypeOne /* decal: Red link text */
