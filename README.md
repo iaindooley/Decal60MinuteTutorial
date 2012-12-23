@@ -262,13 +262,15 @@ The way this works is that you can define these custom styles and whenever you c
 
 Currently you can *only* apply these to editable block level elements (ie. h1-6, p, div and li nodes) however our goal is to expand why types of elements you can target with custom CSS styles (for example allowing you to create an editable span tag and letting the user choose one of several available styles to apply to it).
 
+Once you've finished playing with this interface you can deactivate this site.
+
 ## Step 5: Images, embeds and the file manager
 
 The tutorial videos at the beginning included one on using files and video embeds.
 
 The following code has a mixture of an openly editable div, an area which contains only an editable image and an area which contains a div capable only of having an object embedded (using the tags="embed" attribute).
 
-The sample content in the following HTML describes how each area will operate. Copy and paste this into a file called images_embeds.html in your project and then re-zip it:
+The sample content in the following HTML describes how each area will operate. Create a new ZIP file with the following code in your home.html file:
 
     <html>
         <head>
@@ -295,7 +297,9 @@ The sample content in the following HTML describes how each area will operate. C
         </body>
     </html>
 
-When you upload it you can use the "Update" button instead of adding a new site. When you click "add page" now you will see the template called "Images Embeds". Add a page using this template and have a play around with embedding images and other objects in the openly editable area and see how the experience compares with using the editable image and the editable div that allows only embeds via the tags attribute.
+Add a page using this template and have a play around with embedding images and other objects in the openly editable area and see how the experience compares with using the editable image and the editable div that allows only embeds via the tags attribute.
+
+You can now deactivate the site.
 
 ## Step 6: Area scoping
 
