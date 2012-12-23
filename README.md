@@ -193,12 +193,12 @@ Firstly, create a file called styles.css in your project folder and put the foll
         text:white;
     }
     
-    a.linkTypeOne /* Red link text */
+    a.linkTypeOne /* decal: Red link text */
     {
         color:red;
     }
     
-    a.linkTypeTwo /* Green link text */
+    a.linkTypeTwo /* decal: Green link text */
     {
         color:green;
     }
@@ -232,9 +232,9 @@ Now update your home.html file with the following code - note that it's identica
             </div>
             <div area="Sub content">
                 <div component="Sub content intro" id="something">
-                    <h2>This area allows more than one type of component</h2>
-                    <p>This first component is fixed, but unlike the previous area, if you click the green arrow at the top right, you'll be given the option to add one or more components.</p>
-                    <p>As you mouse over each in the menu, you will see the sample content appear in the document.</p>
+                    <h2 editable="true" tags="none">This area allows more than one type of component</h2>
+                    <p editable="true" tags="inline">This first component is fixed, but unlike the previous area, if you click the green arrow at the top right, you'll be given the option to add one or more components.</p>
+                    <p editable="true" tags="inline">As you mouse over each in the menu, you will see the sample content appear in the document.</p>
                 </div>
                 <div component="Component type 1">
                     <h2 editable="true" tags="none">This component has a heading</h2>
