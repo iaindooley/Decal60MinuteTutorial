@@ -37,6 +37,7 @@ Here is a list of the biggest issues we're aware of that we'd like to fix prior 
  - API design issues
  - We need hosting on all major continents
  - Using data-dcl prefixes on decal attributes
+ - More flexible hosting configuration (including better support for SSL)
 
 More details on each of these points is included as an appendix at the end of the tutorial in the section "Detailed description of issues we aim to fix before launching for public use".
 
@@ -633,3 +634,7 @@ Currently we only have hosting in one location in the US, and in Australia. We w
 ## Using data-dcl prefixes on decal attributes
 
 When you deploy with Decal CMS, you use attributes on your HTML. Currently these attributes aren't easily distinguishable from other HTML attributes.
+
+## More flexible hosting configuration (including better support for SSL)
+
+Currently you can include a .htaccess file in your project however any configuration that needs to be done outside of a .htaccess file is not possible, including configuring a host for SSL.
